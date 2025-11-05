@@ -1,6 +1,6 @@
-# 👕 Codi AI — 당신의 TPO를 위한 AI 스타일리스트
+# 👕 Codi AI — 당신을 위한 AI 스타일리스트
 
-> **Codi AI**는 사용자의 옷장 데이터, 날씨, 시간·장소·상황(TPO)을 분석해  
+> **Codi AI**는 사용자의 옷장 데이터, 날씨, 시간·장소·상황을 분석해  
 > AI가 맞춤형 코디를 추천해주는 서비스입니다.  
 > “오늘 뭐 입지?”를 더 이상 고민하지 마세요.
 
@@ -102,15 +102,6 @@ codi-ai/
 │   ├── App.jsx
 │   └── main.jsx
 ```
-📦 주요 환경 변수
-이름	설명	예시
-VITE_OPENAI_API_KEY	OpenAI GPT API 키	sk-...
-VITE_WEATHER_API_KEY	기상청 Encoding Key	Epjz2FhnLbeUY...
-
-🧠 개발자 참고
-.env는 반드시 Git에 업로드하지 않도록 .gitignore에 추가해야 합니다.
-
-실제 서비스 배포 시에는 API 요청을 서버(백엔드) 를 통해 프록시하는 것이 안전합니다.
 
 🏁 프로젝트 목표
 “Codi AI는 단순한 옷 추천 서비스가 아니라,
