@@ -1,0 +1,25 @@
+# 종속성 폴더
+/node_modules
+/build
+/dist
+/out
+/public/build
+/public/dist
+
+# 빌드 및 로컬 파일
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+
+# 환경 변수 및 민감 정보 (가장 중요!)
+.env
+.env.*
+!.env.production.local # 프로덕션 환경 변수가 필요한 경우를 위해 예외 처리할 수 있음 (선택)
+
+# IDE 관련 파일 (선택 사항)
+.vscode
+.idea
+*.sublime-workspace
+*.sublime-project

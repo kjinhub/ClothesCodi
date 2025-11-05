@@ -1,0 +1,44 @@
+.home-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.home-header h1 {
+  font-size: 48px;
+  color: #6b4eff;
+  margin-bottom: 8px;
+}
+
+.home-header p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.home-header .sub {
+  margin-top: 12px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.home-input-section {
+  background-color: #fff;
+  max-width: 700px;
+  margin: 60px auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+}
+
+.home-input-section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.home-features {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 80px;
+  flex-wrap: wrap;
+}

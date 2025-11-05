@@ -1,0 +1,76 @@
+.wardrobe-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.wardrobe-header h1 {
+  font-size: 36px;
+  color: #6b4eff;
+  margin-bottom: 8px;
+}
+
+.wardrobe-header p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  background-color: #6b4eff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #5c3be0;
+}
+
+/* 카드 그리드 */
+.wardrobe-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* 개별 카드 */
+.outfit-card {
+  width: 200px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.outfit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.outfit-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.outfit-info {
+  padding: 12px;
+}
+
+.outfit-info h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.outfit-info p {
+  font-size: 13px;
+  color: #777;
+}
