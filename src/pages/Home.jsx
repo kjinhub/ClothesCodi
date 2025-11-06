@@ -4,7 +4,7 @@ import InputBox from "../components/InputBox";
 import FeatureCard from "../components/FeatureCard";
 import SuggestionBox from "../components/SuggestionBox";
 import RecommendationBox from "../components/RecommendationBox";
-
+import OutfitPreview from "../components/OutfitPreview";
 function Home() {
   const [result, setResult] = useState("");
 
@@ -40,6 +40,11 @@ function Home() {
           title="TPO 분석"
           desc="시간, 장소, 상황을 고려한 스타일링"
         />
+      </section>
+
+      <section className="home-input-section">
+        <h2>AI가 당신의 스타일을 코디해 드릴께요!</h2>
+        <OutfitPreview outfitText={result} /> {/* 추가 */}
       </section>
     </div>
   );

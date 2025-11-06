@@ -158,3 +158,18 @@
   color: #999;
   margin-top: 6px;
 }
+.outfit-preview {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.outfit-image-box {
+  margin-top: 16px;
+}
+
+.outfit-image {
+  width: 320px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
