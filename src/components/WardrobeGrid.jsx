@@ -1,15 +1,13 @@
-import React from "react";
-import OutfitCard from "./OutfitCard";
-import "../styles/Wardrobe.css";
+import WardrobeCanvas from "../components/WardrobeCanvas";
+import sampleWardrobeData from "../data/sampleWardrobeData";
 
-function WardrobeGrid({ items }) {
+function Wardrobe() {
   return (
-    <div className="wardrobe-grid">
-      {items.map((item) => (
-        <OutfitCard key={item.id} item={item} />
-      ))}
+    <div className="wardrobe-page">
+      <h2>내 옷장</h2>
+      <WardrobeCanvas wardrobe={sampleWardrobeData} />
     </div>
   );
 }
 
-export default WardrobeGrid;
+export default Wardrobe;

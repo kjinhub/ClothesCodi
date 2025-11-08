@@ -1,112 +1,136 @@
-/* InputBox */
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", "Inter", sans-serif;
+  color: #333;
+  background-color: #fdfdff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ===== InputBox ===== */
 .input-box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 24px;
 }
 
 .input-textarea {
   width: 90%;
   max-width: 600px;
-  height: 100px;
-  padding: 12px;
+  height: 120px;
+  padding: 14px;
   font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1.5px solid #dcd8ff;
+  border-radius: 12px;
+  background-color: #fff;
   resize: none;
-  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input-textarea:focus {
-  border-color: #6b4eff;
-  box-shadow: 0 0 4px rgba(107, 78, 255, 0.3);
+  border-color: #715aff;
+  box-shadow: 0 0 8px rgba(113, 90, 255, 0.25);
+  outline: none;
 }
 
 .submit-btn {
-  background-color: #6b4eff;
+  background: linear-gradient(90deg, #715aff, #8e7cff);
   color: #fff;
-  padding: 12px 24px;
-  margin-top: 16px;
-  border-radius: 10px;
+  padding: 12px 28px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 12px;
   font-size: 16px;
-  transition: background-color 0.2s;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
 }
 
 .submit-btn:hover {
-  background-color: #5c3be0;
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #5c47e0, #7d67ff);
 }
 
-/* SuggestionBox */
+/* ===== SuggestionBox ===== */
 .suggestion-box {
-  margin-top: 30px;
-  text-align: left;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .suggestion-box h4 {
-  margin-bottom: 12px;
   color: #444;
+  margin-bottom: 14px;
+  font-weight: 600;
 }
 
 .suggestion-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
 }
 
 .suggestion-item {
-  background-color: #f5f3ff;
-  border: 1px solid #e1ddff;
-  color: #6b4eff;
+  background: #f4f2ff;
+  border: 1px solid #e0dcff;
+  color: #5c47e0;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 8px 14px;
   font-size: 14px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
 }
 
 .suggestion-item:hover {
-  background-color: #ebe7ff;
+  background-color: #e8e4ff;
 }
 
-/* FeatureCard */
+/* ===== FeatureCard ===== */
 .feature-card {
   background-color: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
   width: 260px;
-  padding: 24px 16px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 28px 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.25s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .feature-icon {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 10px;
+  color: #715aff;
 }
 
 .feature-card h3 {
-  color: #333;
+  color: #222;
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .feature-card p {
   color: #666;
   font-size: 14px;
 }
-/* RecommendationBox */
+
+/* ===== RecommendationBox ===== */
 .recommend-box {
-  margin-top: 32px;
+  margin-top: 40px;
   background-color: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 28px;
   text-align: left;
-  max-width: 600px;
+  max-width: 620px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -114,13 +138,15 @@
 .recommend-box h3 {
   color: #6b4eff;
   font-size: 18px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  font-weight: 600;
 }
 
 .recommend-content .outfit {
   font-weight: 600;
   font-size: 17px;
-  margin-bottom: 8px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .recommend-content .reason {
@@ -132,12 +158,168 @@
   color: #777;
   font-style: italic;
 }
-/* Footer */
+
+/* ===== Personal Color Selector ===== */
+.personal-color-selector {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.personal-color-selector label {
+  font-weight: 600;
+  color: #444;
+  margin-right: 10px;
+}
+
+.color-input {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #dcd8ff;
+  width: 200px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.color-input:focus {
+  border-color: #715aff;
+  box-shadow: 0 0 5px rgba(113, 90, 255, 0.25);
+  outline: none;
+}
+
+/* ===== Outfit Preview ===== */
+.outfit-preview {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.outfit-image-box {
+  margin-top: 20px;
+}
+
+.outfit-image {
+  width: 340px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.outfit-image:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Wardrobe Canvas ===== */
+.wardrobe-canvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+  gap: 20px;
+}
+
+.wardrobe-list {
+  border: 1px solid #e1ddff;
+  border-radius: 12px;
+  background: #fafaff;
+  padding: 16px;
+  width: 600px;
+}
+
+.wardrobe-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.wardrobe-item {
+  cursor: grab;
+  text-align: center;
+  transition: transform 0.15s;
+}
+
+.wardrobe-item:hover {
+  transform: scale(1.05);
+}
+
+.wardrobe-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.wardrobe-canvas {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  width: 600px;
+  min-height: 300px;
+  padding: 20px;
+  background: #f9f9ff;
+  text-align: center;
+}
+
+.placeholder {
+  color: #aaa;
+  font-size: 15px;
+  margin-top: 100px;
+}
+
+.feedback-btn {
+  background: #6b4eff;
+  padding: 10px 24px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.feedback-btn:hover {
+  background: #5a3ee0;
+}
+
+.feedback-box {
+  margin-top: 16px;
+  background: #f8f8ff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  width: 600px;
+  text-align: left;
+  border: 1px solid #e1ddff;
+  line-height: 1.6;
+  white-space: pre-line; /* ✅ 이 한 줄만 추가해도 줄바꿈 표현 가능 */
+}
+.feedback-btn:disabled {
+  background: #b8b2ff;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b4eff;
+  font-weight: 500;
+  animation: fadePulse 1.6s infinite;
+}
+
+@keyframes fadePulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ===== Footer ===== */
 .footer {
   text-align: center;
   background-color: #f9f9ff;
-  padding: 24px;
-  color: #666;
+  padding: 30px;
+  color: #777;
   font-size: 14px;
   margin-top: 60px;
   border-top: 1px solid #eee;
@@ -146,7 +328,7 @@
 .footer a {
   color: #6b4eff;
   text-decoration: none;
-  margin: 0 4px;
+  font-weight: 500;
 }
 
 .footer a:hover {
@@ -155,21 +337,57 @@
 
 .footer-sub {
   font-size: 12px;
-  color: #999;
+  color: #aaa;
   margin-top: 6px;
 }
-.outfit-preview {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.outfit-image-box {
+/* 드래그 & 드롭된 아이템 리스트 */
+.selected-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
   margin-top: 16px;
 }
 
-.outfit-image {
-  width: 320px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.canvas-item {
+  position: relative;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.canvas-item:hover {
+  transform: scale(1.05);
+}
+
+.canvas-item-inner {
+  position: relative;
+  display: inline-block;
+}
+
+.canvas-item img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ❌ X 버튼 */
+.remove-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: #e04141;
 }

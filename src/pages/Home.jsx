@@ -5,8 +5,11 @@ import FeatureCard from "../components/FeatureCard";
 import SuggestionBox from "../components/SuggestionBox";
 import RecommendationBox from "../components/RecommendationBox";
 import OutfitPreview from "../components/OutfitPreview";
+import PersonalColorSelector from "../components/PersonalColorSelector";
+
 function Home() {
   const [result, setResult] = useState("");
+  const [personalColor, setPersonalColor] = useState("");
 
   return (
     <div className="home-container">
@@ -22,6 +25,10 @@ function Home() {
 
       <section className="home-input-section">
         <h2>오늘 어떤 일정이 있으신가요?</h2>
+        <PersonalColorSelector
+          personalColor={personalColor}
+          setPersonalColor={setPersonalColor}
+        />
         <InputBox onResult={setResult} />
         <RecommendationBox result={result} />
         <SuggestionBox />
