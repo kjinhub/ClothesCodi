@@ -1,43 +1,38 @@
-// src/api/openaiService.js
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
-/**
- * 사용자 입력(상황), 옷장, 날씨, 퍼스널 컬러를 종합해 코디를 추천하는 함수
- * @param {string} context - 사용자의 자연어 입력 (ex: "내일 저녁 홍대 데이트야")
- * @param {Array} wardrobe - 보유 옷장 데이터 (name, type, color 등)
- * @param {Object} weather - 날씨 데이터 (temperature, condition)
- * @param {string} personalColor - 선택된 퍼스널 컬러 (봄웜 / 여름쿨 / 가을웜 / 겨울쿨)
- * @returns {Promise<{text: string}>} - AI가 생성한 코디 추천 결과
- */
 export async function getAIRecommendation(
   context,
   wardrobe,
   weather,
   personalColor
 ) {
-  // 🧠 AI에게 보낼 프롬프트 구성
   const prompt = `
-당신은 패션 AI 스타일리스트입니다.
+당신은 사용자의 일정, 위치, 날씨 데이터를 바탕으로 코디를 제안하는 패션 AI 스타일리스트입니다.
 
-사용자 입력: ${context}
-현재 날씨: ${weather?.temperature}도, ${weather?.condition}
-보유 옷장: ${wardrobe.map((w) => w.name).join(", ")}
-
-${
-  personalColor
-    ? `사용자의 퍼스널 컬러: ${personalColor}`
-    : "퍼스널 컬러 정보 없음"
-}
+입력 정보:
+- 사용자의 일정: ${context}
+- 사용자 위치: ${weather?.locationName || "사용자 위치 정보 미제공"}
+- 현재 날씨: ${weather?.temperature}도, ${weather?.condition}
+- 사용자의 옷장: ${wardrobe.map((w) => w.name).join(", ")}
+${personalColor ? `- 퍼스널 컬러: ${personalColor}` : "- 퍼스널 컬러 정보 없음"}
 
 요구사항:
-1. 사용자의 일정과 날씨를 고려하여 최적의 코디를 제안하세요.
-2. ${
+1. 사용자가 언급한 날짜(예: 내일, 이번 주 토요일 등)에 맞춰 코디를 제안하되,
+   현재 날씨 데이터를 기반으로 해당 날짜의 **예상 기온대를 수치(°C)** 로 제시하세요.
+2. 결과 문장에는 반드시 다음을 포함하세요:
+   - 지역명(${weather?.locationName || "해당 지역"})
+   - 실제 기온 (${weather?.temperature}°C)
+   - 날씨 상태 (${weather?.condition})
+3. 날씨 수치(기온)와 상태를 코디의 구체적 근거로 제시하세요.
+   (예: "23도 정도로 따뜻하기 때문에 얇은 셔츠가 적합합니다.")
+4. ${
     personalColor
       ? `퍼스널 컬러(${personalColor})에 어울리는 색상 조합을 반영하세요.`
       : ""
   }
-3. 추천 이유를 2~3줄로 설명하고, 대체 가능한 아이템도 함께 제시하세요.
-4. 결과는 자연스럽고 짧은 한국어 문장으로 표현하세요.
+5. 추천 이유를 2~3줄로 제시하고, 대체 가능한 아이템도 함께 언급하세요.
+6. 결과는 자연스럽고 짧은 한국어 문장으로 표현하되, 
+   수치는 반드시 포함하여 사용자에게 신뢰감을 줄 수 있게 작성하세요.
 `;
 
   try {
@@ -55,7 +50,6 @@ ${
 
     const data = await res.json();
 
-    // 예외 처리
     if (data.error) {
       console.error("❌ OpenAI API Error:", data.error);
       return { text: "⚠️ AI 추천 중 오류가 발생했습니다." };

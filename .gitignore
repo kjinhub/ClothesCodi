@@ -23,3 +23,91 @@ yarn-error.log*
 .idea
 *.sublime-workspace
 *.sublime-project
+
+
+# =========================
+# Maven 빌드 관련
+# =========================
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# =========================
+# IntelliJ / Eclipse IDE
+# =========================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# VSCode
+.vscode/
+
+# =========================
+# OS / 환경 파일
+# =========================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# =========================
+# 환경 변수 및 보안 파일
+# =========================
+# 환경 설정
+application.yml
+application.yaml
+application.properties
+
+# 개인 환경 설정
+.env
+*.env
+
+# Firebase / AWS / API 키 등 민감 정보
+firebase-service-key.json
+*.pem
+*.p12
+*.crt
+*.key
+
+# =========================
+# 로그 및 임시 파일
+# =========================
+*.log
+logs/
+*.tmp
+*.bak
+
+# =========================
+# 테스트 / 리포트 파일
+# =========================
+# JUnit / Jacoco
+*.exec
+jacoco-report/
+test-output/
+surefire-reports/
+
+# =========================
+# OS 및 빌드 캐시
+# =========================
+# Maven local cache
+.mvn/
+.m2/
+
+# Gradle (혹시 혼합 프로젝트일 경우)
+.gradle/
+build/

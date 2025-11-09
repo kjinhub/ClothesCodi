@@ -9,26 +9,24 @@ function InputBox({ onResult, personalColor }) {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
-    const handleSubmit = async () => {
-      if (text.trim() === "") return alert("일정을 입력해주세요.");
-      setLoading(true);
+    if (text.trim() === "") return alert("일정을 입력해주세요.");
+    setLoading(true);
 
-      try {
-        const weather = await getWeatherInfo();
-        const aiResult = await getAIRecommendation(
-          text,
-          sampleWardrobeData,
-          weather,
-          personalColor // ✅ 퍼스널 컬러 추가 전달
-        );
-        onResult(aiResult.text);
-      } catch (err) {
-        console.error(err);
-        onResult("⚠️ AI 추천 중 오류가 발생했습니다.");
-      } finally {
-        setLoading(false);
-      }
-    };
+    try {
+      const weather = await getWeatherInfo();
+      const aiResult = await getAIRecommendation(
+        text,
+        sampleWardrobeData,
+        weather,
+        personalColor // ✅ 퍼스널 컬러 전달
+      );
+      onResult(aiResult.text);
+    } catch (err) {
+      console.error(err);
+      onResult("⚠️ AI 추천 중 오류가 발생했습니다.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
